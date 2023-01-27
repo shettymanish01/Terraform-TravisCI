@@ -1,7 +1,8 @@
 ##
 # Module to build the AWS Bootstrap configuration
 ##
-
+# export AWS_SECRET_ACCESS_KEY="sEG9exdXB08etW6Q/fb1acMW79nQNS4kl103YrSS"
+# export AWS_ACCESS_KEY_ID="AKIAWY2OGDLGTAB5HPF5"
 # Build an S3 bucket to store TF state
 resource "aws_s3_bucket" "state_bucket" {
   bucket = var.name_of_s3_bucket
@@ -9,6 +10,7 @@ resource "aws_s3_bucket" "state_bucket" {
   # Prevents Terraform from destroying or replacing this object - a great safety mechanism
   lifecycle {
     prevent_destroy = true
+
   }
 
   tags = {
